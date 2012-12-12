@@ -1,0 +1,64 @@
+body { background-color: #403040; font-family: ubuntu; }
+/* Shared style attributes */
+	/* Any lists in class pokemon */
+	.pokemon ol, .pokemon ul { list-style-type: none; }
+	
+	/* Pokemon Specie/move element types */
+	ul.type > li { background-color: #808080; border: 1px solid #000; border-radius: 2px; color: #fff; float: left; font-weight: bold; margin: 2px; text-align: center; text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.75); }
+	ul.type > li.normal { background-color: #a8a878; border-color: #808080; }
+	ul.type > li.fire { background-color: #f08030; border-color: #c05000; }
+	ul.type > li.water { background-color: #688fee; border-color: #385fbe; }
+	ul.type > li.electric { background-color: #ffd92e; border-color: #cfb90e; }
+	ul.type > li.grass { background-color: #78c551; border-color: #489521; }
+	ul.type > li.ice { background-color: #98d8d8; border-color: #68a8a8; }
+	ul.type > li.fight { background-color: #c03028; border-color: #900008; }
+	ul.type > li.poison { background-color: #9c3f9c; border-color: #6c0f6c; }
+	ul.type > li.ground { background-color: #e0c068; border-color: #b09038; }
+	ul.type > li.flying { background-color: #ab92f7; border-color: #7b62c7; }
+	ul.type > li.psychic { background-color: #f85888; border-color: #c82858; }
+	ul.type > li.bug { background-color: #a8b820; border-color: #788800; }
+	ul.type > li.rock { background-color: #b8a038; border-color: #887008; }
+	ul.type > li.ghost { background-color: #705897; border-color: #402867; }
+	ul.type > li.dragon { background-color: #713bf4; border-color: #410bc4; }
+	ul.type > li.dark { background-color: #705848; border-color: #402818; }
+	ul.type > li.steel { background-color: #b8b8d0; border-color: #8888a0; }
+
+
+/* Pokemon xhtml/output */
+.pokemon { background-color: #900; border: 2px solid #900000; border-radius: 8px; float: left; font-size: 12px; line-height: 14px; margin: 8px; overflow: hidden; padding: 0px; text-align: center; width: 344px; }
+	/* Header styling */
+	.pokemon > header { background-color: #ffd900; border-bottom: 4px solid #cfa900; border-top-left-radius: 5px; border-top-right-radius: 5px; color: #fff; font-size: 1.4em; font-weight: bold; padding: 8px 42px; position: relative; text-shadow: 0px 1px 0px #7f5900; }
+		.pokemon > header > img.badge { background-color: #cfa900; border-radius: 50%; height: 32px; left: 4px; padding: 5px; position: absolute; top: 4px; width: 32px; }
+		.pokemon > header > aside.species { background-color: #cfa900; border-radius: 0px 0px 8px 8px; bottom: -1.6em; font-size: 0.8em; font-weight: bold; padding: 2px 4px; position: absolute; right: 0px; }
+			aside.species:after { font-size: 1.0em; padding-left: 4px; }
+			aside.species.male:after { color: #0000ff; content: "\2642"; }
+			aside.species.female:after { color: #ff9f00; content: "\2640"; }
+	
+	/* Pokemon photo (incl. shiny indicator), type, level, and stats */
+	.pokemon > section.details { background-color: #fff; border-radius: 0px 0px 8px 8px; margin: 0px 8px 2px; overflow: hidden; text-align: left; }
+		.pokemon > section.details > aside.photo { float: left; font-size: 1.2em; font-weight: bold; overflow: hidden; padding: 88px 0px 0px; position: relative; text-align: center; width: 96px; }
+		.pokemon > section.details > aside.photo.shiny:after { color:#f00; content: "\2605"; font-size: 1.2em; font-weight: bold; overflow: hidden; position: absolute; right: 4px; top: 6px; }
+			.pokemon > section.details > aside.photo > img { left: 0px; position: absolute; top: 0px; }
+
+		.pokemon > section.details > ul.type { float: left; margin: 0px; overflow: hidden; padding: 2px; width: 224px; }
+			.pokemon section.details > ul.type > li { font-size: 0.8em; margin: 0px 4px 2px 0px; padding: 2px 4px; text-transform: uppercase; }
+		
+		.pokemon > section.details > ul.stats { border-radius: 2px; float: left; margin: 2px 2px 8px; padding: 0px; overflow: hidden; width: 222px; }
+			.pokemon > section.details > ul.stats > li { font-size: 0.8em; overflow: hidden; padding: 2px 8px; text-align: right; }
+			.pokemon > section.details > ul.stats > li:nth-child(2n+1) { background-color: #fbfbfe; }
+			.pokemon > section.details > ul.stats > li:nth-child(2n) { background-color: #e5e5f8; }
+				.pokemon > section.details > ul.stats > li > label { float: left; font-size: 0.9em; font-weight: bold; text-transform: capitalize; }
+	
+	/* Pokemon ability and nature listing, maybe IV/EV later on */
+	.pokemon > ul.characteristics { margin: 0px 2px; padding: 0px 4px; overflow: hidden; }
+		.pokemon > ul.characteristics > li { color: #fff; float: left; font-size: 0.8em; font-weight: bold; margin: 3px; overflow: hidden; padding-right: 4px; text-align: right; text-transform: capitalize; width: 156px; }
+			.pokemon > ul.characteristics > li > label { background-color: #c01020; border-radius: 8px 8px 64px; float: left; padding: 2px 8px 2px 4px; }
+
+	/* Pokemon move display */
+	.pokemon > ul.move.type { margin: 0px auto; padding: 0px 6px; overflow: hidden; width: 332px; }
+		.pokemon > ul.move.type > li { background-position: center; background-repeat: no-repeat; font-size: 1.2em; padding: 8px 12px; width: 136px; }
+			ul.move.type > li.physical { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAYCAYAAACvKj4oAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJVSURBVFiFzZhbbxMxEIW/s6ShbZq2lCgqd4Ei8f9/DlIFApWXqJS2SWhuZHgY7zbk6u0uS440UtZre8+Jx+MZy8woA5I6QB+4MrPpI+eoAS3gyMwuyuBVK2MSSQlwDJwALyRdA10zu48cfwC0gTMgAUxSYmazotxKEQgcAgq/E3wVWpJ6QBe4tQVXkST8D2kDzYX5FObsFyVWlsDGmvZmsLGkLnAV2lu4sPqWOXdeYIo68Bp4GZ6TEuaMwl8CJdWB5+FxtsZsRVssmRhhKRoh6CQLphVtqQH8MLNxpmkxikraB94BRznI7AL6wFczG843LgkE8P1PC3erJ1WwK4DfwCV+PC29XCkweynt4SLP/hW7grgGLs1ssq7DRoFZJ+kYd9tNUa9KjHF3vNvWMXbTj/AQX07aUwyGcxnFdN60BxvAKX4YH5THr1TcA7fADTDYuAdDutXkQdReZTTLwYQHsb00zRO+Um1cWJ5zapcxw4V251ewhgeRdbZrKzrBg81KSyuaqCgKWXJcB/aBD1S/2jPgMzDEBUQRjyZpjhGe5f8PV06AQzMbxYpLB0VD0lPgPC+zEnEeOEQj70q8iRgzBe5wV4rFMIzZdhOQBA7RiC6XJKXHxzymwK85G6SZfAhaHbZXGgPgIgsKXtE08K2Q2jzPE0mnZnYTxTsyVUuAj3hiO0gFhT25bVyH5Yo9RQ8Xt/FqIrhlKraBFwCfYq40YgUqz8ZeHAu8B54tvPoJfCkyb8zY6GOiCILIt3gJBp5LfnusuFzfrkJg9jHpFYCZfa/qm38AhHDxZkq768QAAAAASUVORK5CYII='); }
+			ul.move.type > li.special { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAYCAYAAACvKj4oAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJRSURBVFiF5ZhvTxpBEMZ/IxQoYFGbtLamSdv0Rb//p+mLxjYxlmpSBAUEAccXMyt7y4EQtDXXSZ5wy+2feXaemb07UVW2NRF5AZSB8Btfp/8BTICpY5L83l+r6mRr3zYlKCIC1IFmhPK2jiyxKdCPMNQNHV6LoJN6BRwAe8DOxq4+jt0CXaADXK5DdiVBEakBb4F9oLRiHgUGwA226zPmcksBc8nGKEXXFaAByIo1Z8AFcKaqo40IikgFeI9FLG+RQOjKMVDV2xXObGwisoOR3HUsI6xYRH+p6s3CPDFBUyLvHOlkY5/oSQg9ZAnhA6CadFGgDbQznEJDRErARyzHYhsAZ8DFMjl7jtbcgRomtzyEYhRknIeRrzlalmMeiH0sfRrJ7S7wU1Vn9wSd3Fd3LtgMOFHVPzkLVJjLpg685PELzy1wDQzxdMiVoMhr4APZGjECvqnqLBD8hIU92DXwPZ1QROrMi86qAvAUpsyLyjDxqwJ8wTY6WEdVfwjm7OfoxhRjP44m2MWKTjNn4SmWn2OsigZMsSikAIt2ilA9A6qOvDO2jxWVq8jHKqbCuP+xAGn0TlT1PBq45xsQR2wA9IBLrODk+LC9ea41sDO4RTbfFDhW1W7U/w0m12CdMotR6SXtI7Lkfqvq6Xaur2e+cQNHW0SOgEO/Le5bNxrSI0uw+a+eSP6alTE9xxJtAedR+5SsRA89J5+DRFMltZJ2v/hFpvDHxH9x0HvH4j6qJQOL+bCdTFbM16WcRYr5wrvQqaifLHIHFPGj04OTPOPPhnfwkLVqJPjrWwAAAABJRU5ErkJggg=='); }
+			ul.move.type > li.status { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAYCAYAAACvKj4oAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIsSURBVFiF3ZhtbxJBFIWfs6A0hkhLm5qatPGTsf//vxi/mBhNJDVSkBahheX6YWZ1urssC/sS05PczPJ27z3MnZlzR2ZGVUh6AXSBZAyf0+8BrIC1t1Vq/PtsZqvKue1LUJKAV0A/sG7VRLZgDdwH9tv2TLgUQU/qNTAEjoFo71TrwQaYArfArAzZQoKSjoA3wAnQKfBjwBx4xP3rMf/KLW2wvXzD8QhQQcwYmAA3Zrbci6Ckl8Bb3IzlBUkI3Xmbm9mmIJlCSOrhyj60smVvuBn9bmaPGd8hQVeJXHhLE3vwjioTCuL1gEtgUNUXjugIGD3hlLyQ1AHe4dZYiDlwA0zq2HGDWBfAOcVleAimwBczi8ET9AE/4Oo+QQx8M7NxndF9rGugV6ffFJbAJzOLk93wiqfkFsDHusl5XNIsOXBcrgC6kk5wm0mCNfA5b8FWhaQBcFq33y0YSppGZNfcyMweGgrab8jvNhxHOUF/NRjwrkHfeejnKZKiA70SzGwGzJryn4cIp/FCnDUcs81ZvI9w50aIoVcyTaHNdTiNzGyCUygJOsC1pNoTkXRKPaqlDG7NbJKswa+4wzFBF3gv6czLt8oIZFkbWOI4lZJqS+AHMD5Ef/pW6xwnzRrbwAJkpVqQDGwX2zHwExgDi5J95IB2lAvsEtupxHa1S0mnnbRLC1xZp1uetoiVa5cyH5ZveDe03+Uf3vBmvvRcryxyf/AcL512OvmPrw3/ALD8DV/+TPF0AAAAAElFTkSuQmCC'); }
+	
+	.pokemon > footer { border: 4px solid #900; color: #fff; font-size: 0.8em; font-weight: bold; padding: 0px 4px; text-align: left; }

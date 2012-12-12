@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="pkmn.template.xsl"?>
+
+<pokemon 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="pkmn.template.xsd" 
+	
+	ability="Sunder Game" 
+	dexid="0" 
+	item="Dubious Disc" 
+	level="999" 
+	name="Missingno" 
+	nature="corrupted" 
+	nickname="Missingno">
+	<types>
+		<type name="&lt;unset&gt;" />
+		<type name="normal" />
+		<type name="fire" />
+		<type name="water" />
+		<type name="electric" />
+		<type name="grass" />
+		<type name="ice" />
+		<type name="fight" />
+		<type name="poison" />
+		<type name="ground" />
+		<type name="flying" />
+		<type name="psychic" />
+		<type name="bug" />
+		<type name="rock" />
+		<type name="ghost" />
+		<type name="dragon" />
+		<type name="dark" />
+		<type name="steel" />
+	</types>
+	<moveset>
+		<move name="&lt;unset&gt;" pp="99" style="" type="" />
+		<move name="Pound" pp="99" style="physical" type="normal" />
+		<move name="Ember" pp="99" style="special" type="fire" />
+		<move name="Bubble" pp="99" style="special" type="water" />
+		<move name="Thundershock" pp="99" style="special" type="electric" />
+		<move name="Vine Whip" pp="99" style="physical" type="grass" />
+		<move name="Ice Beam" pp="99" style="special" type="ice" />
+		<move name="Low Kick" pp="99" style="physical" type="fight" />
+		<move name="Toxic" pp="99" style="special" type="poison" />
+		<move name="Earthquake" pp="99" style="physical" type="ground" />
+		<move name="Peck" pp="99" style="physical" type="flying" />
+		<move name="Trick Room" pp="99" style="status" type="psychic" />
+		<move name="Signal Beam" pp="99" style="special" type="bug" />
+		<move name="Rock Tomb" pp="99" style="physical" type="rock" />
+		<move name="Shadow Ball" pp="99" style="special" type="ghost" />
+		<move name="Outrage" pp="99" style="physical" type="dragon" />
+		<move name="Dark Pulse" pp="99" style="special" type="dark" />
+		<move name="Steel Wing" pp="99" style="physical" type="steel" />
+	</moveset>
+	<stats>
+		<stat ev="255" iv="31" name="HP" value="999" />
+		<stat ev="255" iv="31" name="Attack" value="999" />
+		<stat ev="255" iv="31" name="Defense" value="999" />
+		<stat ev="255" iv="31" name="Special Attack" value="999" />
+		<stat ev="255" iv="31" name="Special Defense" value="999" />
+		<stat ev="255" iv="31" name="Speed" value="999" />
+	</stats>
+	<notes>Even when not a valid pkmn xml file (based on pkmn.template.xsd), this should still display reasonably correct in a browser. This file has an excess of child elements in its &lt;types&gt; and &lt;moveset&gt; elements. This file has wildly invalid values assigned to various attributes. Please review the xsd file for clarification.</notes>
+</pokemon>

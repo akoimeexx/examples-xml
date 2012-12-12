@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="pkmn.template.xsl"?>
+
+<pokemon 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="pkmn.template.xsd" 
+	
+	ability="Thick Fat" 
+	dexid="473" 
+	gender="male" 
+	item="Expert Belt" 
+	level="100" 
+	name="Mamoswine" 
+	nature="adamant" 
+	nickname="Mamoswine">
+	<types>
+		<type name="ice" />
+		<type name="ground" />
+	</types>
+	<moveset>
+		<move name="Ice Fang" pp="24" style="physical" type="ice" />
+		<move name="Ice Shard" pp="48" style="physical" type="ice" />
+		<move name="Icicle Crash" pp="16" style="physical" type="ice" />
+		<move name="Earthquake" pp="16" style="physical" type="ground" />
+	</moveset>
+	<stats>
+		<stat ev="255" iv="31" name="HP" value="999" />
+		<stat ev="255" iv="31" name="Attack" value="999" />
+		<stat ev="255" iv="31" name="Defense" value="999" />
+		<stat ev="255" iv="31" name="Special Attack" value="999" />
+		<stat ev="255" iv="31" name="Special Defense" value="999" />
+		<stat ev="255" iv="31" name="Speed" value="999" />
+	</stats>
+	<notes></notes>
+</pokemon>

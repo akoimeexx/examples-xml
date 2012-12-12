@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="pkmn.template.xsl"?>
+
+<roster>
+	<!-- Bare minimum that an xsl file should expect -->
+	<pokemon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="pkmn.template.xsd" />
+		
+	<!-- Bare minimum for a properly formatted pokemon -->
+	<pokemon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="pkmn.template.xsd" 
+		ability="???" 
+		dexid="0" 
+		name="Missingno" 
+		nature="???" 
+		nickname="Missingno" >
+		<types>
+			<type name="???" />
+		</types>
+		<moveset>
+			<move name="???" pp="99" style="???" type="???" />
+			<move name="???" pp="99" style="???" type="???" />
+			<move name="???" pp="99" style="???" type="???" />
+			<move name="???" pp="99" style="???" type="???" />
+		</moveset>
+		<stats>
+			<stat ev="255" iv="31" name="HP" value="999" />
+			<stat ev="255" iv="31" name="Attack" value="999" />
+			<stat ev="255" iv="31" name="Defense" value="999" />
+			<stat ev="255" iv="31" name="Special Attack" value="999" />
+			<stat ev="255" iv="31" name="Special Defense" value="999" />
+			<stat ev="255" iv="31" name="Speed" value="999" />
+		</stats>
+	</pokemon>
+
+	<pokemon 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:noNamespaceSchemaLocation="pkmn.template.xsd" 
+		
+		ability="???" 
+		dexid="0" 
+		gender="male" 
+		item="???" 
+		level="999" 
+		name="Missingno" 
+		nature="???" 
+		nickname="Missingno">
+
+		<!-- xsd: one or two types, should use an enum. -->
+		<types>
+			<type name="???" />
+			<type name="???" />
+		</types>
+		
+		<!-- xsd: One to four moves. 
+		     
+		     xsd: Name should be a string greater than zero in length.
+		     
+		     xsd: type and style should use enums, where type should be 
+		     identical to the types of pokemon available.
+		     
+		     
+		     xsl: Unnamed moves should use unset type/style to act as 
+		     placeholders if need be, but the xsl should automagically add 
+		     properly formatted placeholders without the need for blank moves.
+		 -->
+		<moveset>
+			<move name="???" pp="99" style="???" type="???" />
+			<move name="???" pp="99" style="???" type="???" />
+			<move name="???" pp="99" style="???" type="???" />
+			<move name="???" pp="99" style="???" type="???" />
+		</moveset>
+		<stats>
+			<stat ev="255" iv="31" name="HP" value="999" />
+			<stat ev="255" iv="31" name="Attack" value="999" />
+			<stat ev="255" iv="31" name="Defense" value="999" />
+			<stat ev="255" iv="31" name="Special Attack" value="999" />
+			<stat ev="255" iv="31" name="Special Defense" value="999" />
+			<stat ev="255" iv="31" name="Speed" value="999" />
+		</stats>
+		<notes></notes>
+	</pokemon>
+</roster>

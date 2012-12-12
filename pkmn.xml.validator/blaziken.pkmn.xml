@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="pkmn.template.xsl"?>
+
+<pokemon 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="pkmn.template.xsd" 
+	
+	ability="Speed Boost" 
+	dexid="257" 
+	gender="male" 
+	item="???" 
+	level="100" 
+	name="Blaziken" 
+	nature="adamant" 
+	nickname="Blaziken" 
+	shiny="shiny">
+	<types>
+		<type name="fire" />
+		<type name="fight" />
+	</types>
+	<moveset>
+		<move name="Flare Blitz" pp="24" style="physical" type="fire" />
+		<move name="Sky Uppercut" pp="24" style="physical" type="fight" />
+		<move name="Brave Bird" pp="24" style="physical" type="flying" />
+		<move name="Poison Jab" pp="32" style="physical" type="poison" />
+	</moveset>
+	<stats>
+		<stat ev="255" iv="31" name="HP" value="999" />
+		<stat ev="255" iv="31" name="Attack" value="999" />
+		<stat ev="255" iv="31" name="Defense" value="999" />
+		<stat ev="255" iv="31" name="Special Attack" value="999" />
+		<stat ev="255" iv="31" name="Special Defense" value="999" />
+		<stat ev="255" iv="31" name="Speed" value="999" />
+	</stats>
+	<notes></notes>
+</pokemon>

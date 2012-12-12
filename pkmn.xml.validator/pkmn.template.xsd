@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xml:lang="EN">
+
+<!-- "Attack/Pokemon Type" named simpleType definition -->
+<xs:simpleType name="enum-type">
+	<xs:annotation>
+		<xs:documentation>Enumeration of Pokemon and Move element types</xs:documentation>
+	</xs:annotation>
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="normal" />
+		<xs:enumeration value="fire" />
+		<xs:enumeration value="water" />
+		<xs:enumeration value="electric" />
+		<xs:enumeration value="grass" />
+		<xs:enumeration value="ice" />
+		<xs:enumeration value="fight" />
+		<xs:enumeration value="poison" />
+		<xs:enumeration value="ground" />
+		<xs:enumeration value="flying" />
+		<xs:enumeration value="psychic" />
+		<xs:enumeration value="bug" />
+		<xs:enumeration value="rock" />
+		<xs:enumeration value="ghost" />
+		<xs:enumeration value="dragon" />
+		<xs:enumeration value="dark" />
+		<xs:enumeration value="steel" />
+	</xs:restriction>
+</xs:simpleType>
+		
+<!-- Pokemon element defining a pokemon roster object -->
+<xs:element name="pokemon">
+	<xs:complexType>
+		<!-- Child elements -->
+		<xs:all>
+			<!-- Types element to store the pokemon type(s) -->
+			<xs:element name="types" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<!-- Type element, with attribute for name  -->
+						<xs:element name="type" minOccurs="1" maxOccurs="2">
+							<xs:complexType>
+								<xs:attribute name="name" type="enum-type" use="required" />
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			
+			<!-- Stats element to store Pokemon stat details-->
+			<xs:element name="stats" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="stat" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="ev" default="0">
+									<xs:simpleType>
+										<xs:restriction base="xs:integer">
+											<xs:minInclusive value="0" />
+											<xs:maxInclusive value="255" />
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="iv" default="1">
+									<xs:simpleType>
+										<xs:restriction base="xs:positiveInteger">
+											<xs:minInclusive value="1" />
+											<xs:maxInclusive value="31" />
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="name" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="hp" />
+											<xs:enumeration value="attack" />
+											<xs:enumeration value="defense" />
+											<xs:enumeration value="special attack" />
+											<xs:enumeration value="special defense" />
+											<xs:enumeration value="speed" />
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="value" type="xs:positiveInteger" default="1" />
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			
+			<!-- Moveset element to store a list of moves -->
+			<xs:element name="moveset" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<!-- Move element, with attributes for name, style, and type -->
+						<xs:element name="move" minOccurs="1" maxOccurs="4">
+							<xs:complexType>
+								<xs:attribute name="name" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:minLength value="1" />
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="pp" type="xs:positiveInteger" use="required" />
+								<xs:attribute name="style" default="physical">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="physical" />
+											<xs:enumeration value="special" />
+											<xs:enumeration value="status" />
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="type" type="enum-type" default="normal" />
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			
+			<!-- Optional element to display user-supplied notes -->
+			<xs:element name="notes" type="xs:string" minOccurs="0" maxOccurs="1" />
+		</xs:all>
+
+		<!-- Pokemon element attributes -->
+	<!-- 
+	     xsd: pokemon must have at least a dexid and name set if it has content any 
+	     child elements set.
+	-->
+		<!--
+		     xsd: ability, if set, must be an enum of available abilities.
+		-->
+		<xs:attribute name="ability" type="xs:string" />
+		<xs:attribute name="dexid" default="0">
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="0" />
+					<xs:maxInclusive value="649"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		
+		<!-- Gender: [male|female] | unset -->
+		<xs:attribute name="gender">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="male" />
+					<xs:enumeration value="female" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<!-- 
+		     xsd: item, if set, must be a string greater than zero in length.
+		-->
+		<xs:attribute name="item" type="xs:string" />
+		
+		<!-- Level: [1-100] | unset -->
+		<xs:attribute name="level">
+			<xs:simpleType>
+				<xs:restriction base="xs:positiveInteger">
+					<xs:maxInclusive value="100"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<!-- 
+		     xsd: name, if set, must be the name of the kind of pokemon. The only way 
+		     to 100% cover this is by using an enum of all current 'mons(600+ strings). 
+		     Otherwise, must be a string greater than zero and less than or equal to 
+		     ten in length.
+		-->
+		<xs:attribute name="name" type="xs:string" default="Missingno" />
+		
+		<!-- Nature: [enum-natures value] | unset -->
+		<xs:attribute name="nature">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<!-- Neutral natures -->
+					<xs:enumeration value="bashful" />
+					<xs:enumeration value="docile" />
+					<xs:enumeration value="hardy" />
+					<xs:enumeration value="quirky" />
+					<xs:enumeration value="serious" />
+					<!-- Attack-boosting natures -->
+					<xs:enumeration value="adamant" /><!-- Reduces Special Attack -->
+					<xs:enumeration value="brave" /><!-- Reduces Speed -->
+					<xs:enumeration value="lonely" /><!-- Reduces Defense -->
+					<xs:enumeration value="naughty" /><!-- Reduces Special Defense -->
+					<!-- Defense-boosting natures -->
+					<xs:enumeration value="bold" /><!-- Reduces Attack -->
+					<xs:enumeration value="impish" /><!-- Reduces Special Attack -->
+					<xs:enumeration value="lax" /><!-- Reduces Special Defense -->
+					<xs:enumeration value="relaxed" /><!-- Reduces Speed -->
+					<!-- Speed-boosting natures -->
+					<xs:enumeration value="hasty" /><!-- Reduces Defense -->
+					<xs:enumeration value="jolly" /><!-- Reduces Special Attack -->
+					<xs:enumeration value="naive" /><!-- Reduces Special Defense -->
+					<xs:enumeration value="timid" /><!-- Reduces Attack -->
+					<!-- Special Attack-boosting natures -->
+					<xs:enumeration value="mild" /><!-- Reduces Defense -->
+					<xs:enumeration value="modest" /><!-- Reduces Attack -->
+					<xs:enumeration value="quiet" /><!-- Reduces Speed -->
+					<xs:enumeration value="rash" /><!-- Reduces Special Defense -->
+					<!-- Special Defense-boosting natures -->
+					<xs:enumeration value="calm" /><!-- Reduces Attack -->
+					<xs:enumeration value="careful" /><!-- Reduces Special Attack -->
+					<xs:enumeration value="gentle" /><!-- Reduces Defense -->
+					<xs:enumeration value="sassy" /><!-- Reduces Speed -->
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		
+		<!-- Nickname: ([a-zA-Z0-9 _-]){1,10} | unset -->
+		<xs:attribute name="nickname">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="([a-zA-Z0-9 _-]){1,10}" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		
+		<!-- Shiny: [shiny] | unset -->
+		<xs:attribute name="shiny">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="shiny" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:element>
+
+</xs:schema>

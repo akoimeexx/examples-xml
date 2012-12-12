@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="pkmn.template.xsl"?>
+
+<pokemon 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="pkmn.template.xsd" 
+	
+	ability="Illusion" 
+	dexid="571" 
+	gender="male" 
+	item="???" 
+	level="100" 
+	name="Zoroark" 
+	nature="modest" 
+	nickname="Zoroark">
+	<types>
+		<type name="dark" />
+	</types>
+	<moveset>
+		<move name="Night Daze" pp="16" style="special" type="dark" />
+		<move name="Extrasensory" pp="48" style="special" type="psychic" />
+		<move name="Flamethrower" pp="24" style="special" type="fire" />
+		<move name="U-turn" pp="32" style="physical" type="bug" />
+	</moveset>
+	<stats>
+		<stat ev="255" iv="31" name="HP" value="999" />
+		<stat ev="255" iv="31" name="Attack" value="999" />
+		<stat ev="255" iv="31" name="Defense" value="999" />
+		<stat ev="255" iv="31" name="Special Attack" value="999" />
+		<stat ev="255" iv="31" name="Special Defense" value="999" />
+		<stat ev="255" iv="31" name="Speed" value="999" />
+	</stats>
+</pokemon>
