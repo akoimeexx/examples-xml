@@ -10,13 +10,27 @@
 <link rel="stylesheet" type="text/css" href="pkmn.template.css" />
 <li class="pokemon" id="{@nickname}-{@name}-{@dexid}">
 	<header>
-		<img src="./pokemon/icons/{@dexid}.png" class="badge" alt="Pokedex Entry #{@dexid} icon" title="{@nickname}" />
+		<img src="./pokemon/icons/{@dexid}.png" class="badge" alt="Pokedex Entry #{@dexid} icon" title="{@name}" />
+			<xsl:choose>
+				<xsl:when test="@nickname">
 		<xsl:value-of select="@nickname"/>
+				</xsl:when>
+				<xsl:otherwise>
+		<xsl:value-of select="@name"/>
+				</xsl:otherwise>
+			</xsl:choose>
 		<aside class="species {@gender}">#<xsl:value-of select="@dexid"/></aside>
 	</header>
 	<section class="details">
 		<aside class="photo {@shiny}">
-			<img src="./pokemon/main-sprites/black-white/{@shiny}/{@dexid}.png" alt="#{@dexid}" title="{@nickname} carrying {@item}" />
+			<xsl:choose>
+				<xsl:when test="@item">
+			<img src="./pokemon/main-sprites/black-white/{@shiny}/{@dexid}.png" alt="#{@dexid}" title="{@name} carrying {@item}" />
+				</xsl:when>
+				<xsl:otherwise>
+			<img src="./pokemon/main-sprites/black-white/{@shiny}/{@dexid}.png" alt="#{@dexid}" title="{@name}" />
+				</xsl:otherwise>
+			</xsl:choose>
 			<xsl:if test="@level">Lv.<xsl:value-of select="@level"/></xsl:if>
 		</aside>
 
